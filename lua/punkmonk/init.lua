@@ -1,7 +1,7 @@
 require("hakirot.lazy")
 require("hakirot.remap")
 require("hakirot.set")
+require("hakirot.treesitter")
 require("hakirot.telescope")
 require("hakirot.lsp_config")
 require("hakirot.cmp")
-require("hakirot.treesitter")
