@@ -17,7 +17,7 @@
 require'nvim-treesitter'.setup {
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath('data') .. '/site',
-  ensure_installed = { "lua", "rust", "toml", "markdown", "markdown_inlinej", "c", "python", "html", "css", "javascript", "json" },
+  ensure_installed = { "lua", "rust", "toml", "markdown", "markdown_inline", "c", "python", "html", "css", "javascript", "json", "pug" },
 }
 
 vim.filetype.add({

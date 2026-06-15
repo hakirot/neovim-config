@@ -38,15 +38,19 @@ require("lazy").setup({
     init = false,
     opts = function()
       local dashboard = require("alpha.themes.dashboard")
--- '
+
       local logo = [[
-    \\-_,_._,_-//
-   _ \\ '   ' // _
-    _ \\     // _
-     _ \\   // _
-        \\ //
-         \//
-    ]]
+      <;;;;;;;;;]xxxxx( 
+      ]]
+
+--      local logo = [[
+--    \\-,,_._,,-//
+-- ___ \\       // ___
+--   __ \\     // __
+--     _ \\   // _
+--        \\ //
+--         \//
+--    ]]
 --    local logo = [[
 --████    ████    ████
 -- ████    ████    ████
