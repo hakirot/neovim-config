@@ -17,7 +17,21 @@
 require'nvim-treesitter'.setup {
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath('data') .. '/site',
-  ensure_installed = { "lua", "rust", "toml", "markdown", "markdown_inline", "c", "python", "html", "css", "javascript", "json", "pug" },
+}
+
+require'nvim-treesitter'.install {
+  "lua",
+  "rust",
+  "toml",
+  "markdown",
+  "markdown_inline",
+  "c",
+  "python",
+  "html",
+  "css",
+  "javascript",
+  "json",
+  "pug"
 }
 
 vim.filetype.add({
@@ -28,6 +42,7 @@ vim.filetype.add({
 
 -- render ejs as html
 vim.treesitter.language.register('html', { 'ejs' })
+vim.treesitter.language.register('pug', { 'pug' })
 
 require'treesitter-context'.setup{
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -45,3 +60,9 @@ require'treesitter-context'.setup{
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "lua", "javascript", "html", "css", "pug" },
+    callback = function()
+        vim.treesitter.start()
+    end,
+})
