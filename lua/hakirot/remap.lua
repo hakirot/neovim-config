@@ -33,6 +33,10 @@ vim.keymap.set("n", "<leader><cr>", ":Neotree toggle position=float<cr>" )
 vim.keymap.set("n", "<leader><leader>", ":Neotree toggle position=float<cr>")
 vim.keymap.set("n", "<leader>b", ":Neotree toggle show buffers float<cr>")
 
+-- don't jump when using '*' or '?'
+vim.keymap.set("n", "*", "*``")
+vim.keymap.set("n", "?", "?``")
+
 -- vsnip - jump to next snippet jump point
 local map = vim.keymap.set
 map({ "i", "s" }, "<S-tab>", function()

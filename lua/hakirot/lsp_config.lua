@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "autotools_ls", "clangd", "basedpyright", "arduino_language_server" }
+  ensure_installed = { "lua_ls", "autotools_ls", "clangd", "basedpyright", "arduino_language_server", "zls" }
 })
 
 -- FOR REFERENCE
@@ -30,10 +30,6 @@ end
 --nnoremap <buffer> [d <cmd>lua vim.diagnostic.goto_prev()<cr>
 --nnoremap <buffer> ]d <cmd>lua vim.diagnostic.goto_next()<cr>
 
---require("lspconfig").lua_ls.setup {
---  on_attach = on_attach
---}
-
 vim.lsp.config('setup', {
   on_attach = on_attach
 })
@@ -44,18 +40,6 @@ vim.diagnostic.config({
   underline = false,
   severity_sort = true,
 	open_float = true,
-
---            Popup Diagnostics Border configuration
---float = {
---  border = 'rounded',
---  source = 'always',
---  header = '',
---  prefix = '',
---  format = function(diagnostic)
---    return string.format("[%s] %s", diagnostic.source, diagnostic.message)
---  end,
---  position = "top",
---},
 
   signs = {
     text = {

@@ -14,7 +14,8 @@ require'nvim-treesitter'.install {
   "css",
   "javascript",
   "json",
-  "pug"
+  "pug",
+  "zig"
 }
 
 vim.filetype.add({
