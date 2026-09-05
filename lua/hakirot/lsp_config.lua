@@ -48,12 +48,6 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = '',
       [vim.diagnostic.severity.INFO] = '',
     },
---    linehl = {
---      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
---    },
---    numhl = {
---      [vim.diagnostic.severity.WARN] = 'WarningMsg',
---    },
   },
 })
 
@@ -68,43 +62,9 @@ vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
 vim.api.nvim_set_option('updatetime', 300)
 
--- Fixed column for diagnostics to appear
--- Show autodiagnostic popup on cursor hover_range
--- Goto previous / next diagnostic warning / error 
--- Show inlay_hints more frequently 
 vim.cmd([[
 	set signcolumn=yes
-" autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-" autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
 ]])
-
--- FLOATING WINDOW BORDERS
-
--- Thanks.
--- https://vi.stackexchange.com/questions/39074/user-borders-around-lsp-floating-windows
-
---local _border = "single"
-
---vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
---  vim.lsp.handlers.hover, {
---    border = _border
---  }
---)
---
---vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
---  vim.lsp.handlers.signature_help, {
---    border = _border
---  }
---)
---
---vim.diagnostic.config{
---  float={border=_border}
---}
 
 -- An example nvim-lspconfig capabilities setting
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
---require("lspconfig").clangd.setup({
---  on_attach = on_attach
---})
