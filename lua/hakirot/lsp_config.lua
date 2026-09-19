@@ -3,18 +3,6 @@ require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls", "autotools_ls", "clangd", "basedpyright", "arduino_language_server", "zls" }
 })
 
--- FOR REFERENCE
---nnoremap <buffer> K <cmd>lua vim.lsp.buf.hover()<cr>
---nnoremap <buffer> gd <cmd>lua vim.lsp.buf.definition()<cr>
---nnoremap <buffer> gD <cmd>lua vim.lsp.buf.declaration()<cr>
---nnoremap <buffer> gi <cmd>lua vim.lsp.buf.implementation()<cr>
---nnoremap <buffer> go <cmd>lua vim.lsp.buf.type_definition()<cr>
---nnoremap <buffer> gr <cmd>lua vim.lsp.buf.references()<cr>
---nnoremap <buffer> <C-k> <cmd>lua vim.lsp.buf.signature_help()<cr>
---nnoremap <buffer> <F2> <cmd>lua vim.lsp.buf.rename()<cr>
---nnoremap <buffer> <F4> <cmd>lua vim.lsp.buf.code_action()<cr>
---xnoremap <buffer> <F4> <cmd>lua vim.lsp.buf.range_code_action()<cr>
-
 local on_attach = function(_, _)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action , {})
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
@@ -27,8 +15,6 @@ end
 
 --" Diagnostics
 --nnoremap <buffer> gl <cmd>lua vim.diagnostic.open_float()<cr>
---nnoremap <buffer> [d <cmd>lua vim.diagnostic.goto_prev()<cr>
---nnoremap <buffer> ]d <cmd>lua vim.diagnostic.goto_next()<cr>
 
 vim.lsp.config('setup', {
   on_attach = on_attach
