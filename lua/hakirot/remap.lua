@@ -33,6 +33,9 @@ vim.keymap.set("n", "<leader><cr>", ":Neotree toggle position=float<cr>" )
 vim.keymap.set("n", "<leader><leader>", ":Neotree toggle position=float<cr>")
 vim.keymap.set("n", "<leader>b", ":Neotree toggle show buffers float<cr>")
 
+-- copy full path of current buffer
+vim.keymap.set("n", "<Leader>C", ":let @+=expand('%:p')<CR>")
+
 -- don't jump when using '*' or '?'
 vim.keymap.set("n", "*", "*``")
 vim.keymap.set("n", "?", "?``")

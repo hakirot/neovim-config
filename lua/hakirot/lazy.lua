@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
     lazy = false,
     build = ':TSUpdate'
   },
@@ -41,30 +40,9 @@ require("lazy").setup({
       local dashboard = require("alpha.themes.dashboard")
 
       local logo = [[
-      <;;;;;;;;;]xxxxx( 
+        NVIM
       ]]
 
---      local logo = [[
---    \\-,,_._,,-//
--- ___ \\       // ___
---   __ \\     // __
---     _ \\   // _
---        \\ //
---         \//
---    ]]
---    local logo = [[
---████    ████    ████
--- ████    ████    ████
---   ███     ███     ███
---    ███     ███     ███
---    █ ██    █ ██    █ ██
---       ██      ██      ██
---        ██      ██      ██
---         ██      ██      ██
---          ██      ██      ██
---           █       █       █
---            █       █       █
---  ]]
       dashboard.section.header.val = vim.split(logo, "\n")
       -- stylua: ignore
       dashboard.section.buttons.val = {
@@ -125,10 +103,10 @@ require("lazy").setup({
     end,
   },
   {
-    'nvim-telescope/telescope.nvim', tag = 'master',
+    'nvim-telescope/telescope.nvim', version = '*',
      dependencies = {
        'nvim-lua/plenary.nvim',
-       'nvim-telescope/telescope-live-grep-args.nvim'
+     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
      }
   },
   {
