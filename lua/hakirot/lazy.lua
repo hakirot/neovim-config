@@ -40,7 +40,7 @@ require("lazy").setup({
       local dashboard = require("alpha.themes.dashboard")
 
       local logo = [[
-        NVIM
+    NVIM
       ]]
 
       dashboard.section.header.val = vim.split(logo, "\n")
