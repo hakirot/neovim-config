@@ -4,6 +4,11 @@
     "body": "for(int i = 0; i < $1; i++){\n\n}",
     "description": "for loop"
   },
+  "crit": {
+    "prefix": "crit",
+    "body": "crit(\"$1\");",
+    "description": "for loop"
+  },
   "main": {
     "prefix": "main",
     "body": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(int argc, char* argv[]) {\n\n\t$1\n\treturn 0;\n}",

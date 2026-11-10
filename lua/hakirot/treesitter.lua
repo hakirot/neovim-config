@@ -20,7 +20,8 @@ require'nvim-treesitter'.install {
 
 vim.filetype.add({
     extension = {
-        ejs = "html"
+        ejs = "html",
+        def = "c"
     }
 })
 
